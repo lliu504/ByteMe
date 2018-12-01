@@ -1,0 +1,309 @@
+public class TravelGuide {
+	public static void main(String[] args) {
+		System.out.println("Do you want to travel into Boston? Answer 'Yes' or 'No'");
+		String response = TextIO.getlnWord();
+		String activity = "";
+		String food = "";
+		String transportChoice = "";
+		if(response.equals("No")) {
+			System.out.println("thank you, next - Ariana Grande https://www.youtube.com/watch?v=gl1aHhXnN1k");
+		}
+		if(response.equals("Yes")) {
+			System.out.println("Do you want indoor or outdoor activities? Answer 'indoor', 'outdoor', 'neither'.");
+			String activities = TextIO.getlnWord();
+			if(activities.equals("indoor")) {
+				activity = chooseIndoorActivity();
+			}
+			if (activities.equals("outdoor")){
+				activity = chooseOutdoorActivity();
+			}
+			if(activities.equals("neither")) {
+
+			}
+			System.out.println("Are you up for a food adventure? Answer 'Yes' or 'No'. ");
+			String adventure = TextIO.getlnWord();
+			if(adventure.equals("Yes")) {
+				food = chooseCuisine();
+				transportChoice = chooseTransportation();
+			}
+			else if (adventure.equals("No")) {
+				System.out.println(" thank you, next - Ariana Grande https://www.youtube.com/watch?v=gl1aHhXnN1k");
+			}
+		}
+		System.out.println("Here is your itinerary:");
+		System.out.printf("%s%n %s%n %s%n",activity,food,transportChoice);
+	}
+
+	public static String chooseCuisine() {
+		System.out.println("Here is a list of cuisines: Korean, Japanese, Chinese, Thai, Vietnamese, Indian, Italian, American, Mediterranean, Mexican. Which one do you crave?");
+		String cuisine = TextIO.getlnWord();
+		String food = "";
+		if(cuisine.equals("Korean")) {
+			food = chooseKorean();
+		} else if(cuisine.equals("Japanese")) {
+			food = chooseJapanese();
+		} else if(cuisine.equals("Chinese")) {
+			food = chooseChinese();
+		} else if(cuisine.equals("Thai")) {
+			food = chooseThai();
+		} else if(cuisine.equals("Vietnamese")) {
+			food = chooseVietnamese();
+		} else if(cuisine.equals("Indian")) {
+			food = chooseIndian();
+		} else if (cuisine.equals("Italian")) {
+			food = chooseItalian();
+		} else if(cuisine.equals("American")) {
+			food = chooseAmerican();
+		} else if(cuisine.equals("Mediterranean")) {
+			food = chooseMediterranean();
+		} else if(cuisine.equals("Mexican")) {
+			food = chooseMexican();
+		} else {
+			System.out.println(" thank you, next - Ariana Grande https://www.youtube.com/watch?v=gl1aHhXnN1k");
+		}
+		return food;
+
+	}
+
+	public static String chooseKorean(){
+		System.out.println("How much are you willing to spend on a restaurant? Please enter in integer form.");
+		int budget = TextIO.getlnInt();
+		String food = "";
+		if(budget >=0 && budget < 11) {
+			System.out.println("Choose from the following: Grass Roots Cafe, OliToki, Misono Grill");
+			food=TextIO.getln();
+		} else if (budget >=11){
+			System.out.println("Choose from the following: Seoul Soulongtang, SOJUba, K Restaurant, Haju Kitchen, Bonchon, BAB Korean Bistro");
+			food=TextIO.getln();
+		} else{
+			System.out.println("Please put in a valid number.");
+			chooseKorean();
+		}
+		return food;
+	}
+
+	public static String chooseChinese(){
+		System.out.println("How much are you willing to spend on a restaurant? Please enter in integer form.");
+		int budget = TextIO.getlnInt();
+		String food = "";
+		if(budget >= 0 && budget < 11){
+			System.out.println("Choose from the following: Hong Kong Eatery, Clay Pot Cafe, He La Moon");
+			food = TextIO.getln();
+		} else if(budget >= 11){
+			System.out.println("Choose from the following: Gourmet Dumpling House, New Golden Gate, Hot Eastern");
+			food = TextIO.getln();
+		} else{
+			System.out.println("Please put in a valid number");
+			chooseChinese();
+		}
+		return food;
+
+	}
+
+	public static String chooseMexican(){
+		System.out.println("How much are you willing to spend on a restaurant? Please enter in integer form.");
+		int budget = TextIO.getlnInt();
+		String food = "";
+		if(budget >= 0 && budget < 11){
+			System.out.println("Choose from the following: El Pelón Taquería, Tenoch Mexican, Taqueria Jaliso");
+			food = TextIO.getln();
+		} else if(budget >= 11 && budget < 31){
+			System.out.println("Choose from the following: Lolita Cocina & Tequila Bar, Locao Taqueria and Oyster Bar, El Centro");
+			food = TextIO.getln();
+		} else if(budget >= 31){
+			System.out.println("Choose from the following:Temazcal Tequila Cantina, Toro");
+			food = TextIO.getln();
+		} else{
+			System.out.println("Please put in a valid number");
+			chooseMexican();
+		}
+		return food;
+	}
+
+	public static String chooseJapanese() {
+		System.out.println("How much are you willing to spend at a restaurant? Please enter in integer form:");
+		int budget = TextIO.getlnInt();
+		String food = "";
+		if(budget >= 0 && budget < 11) {
+			System.out.println("Choose from the following: Cafe Mami, Pikaichi, Tampopo");
+			food = TextIO.getln();
+		} else if(budget >= 11 && budget < 31) {
+			System.out.println("Choose from the following: Ittoku, Fish Market, Ganko Ittetsu Ramen, Genki Ya, Gyu Kaku");
+			food = TextIO.getln();
+		} else if(budget >= 31) {
+			System.out.println("Choose from the following: Pabu, Douzo, Fugakyu");
+		} else {
+			System.out.println("Please put in a valid number.");
+			chooseJapanese();
+		}
+		return food;
+	}
+
+	public static String chooseThai() {
+		System.out.println("How much are you willing to spend at a restaurant? Please enter in integer form:");
+		int budget = TextIO.getlnInt();
+		String food = "";
+		if(budget >= 0 && budget < 11) {
+			System.out.println("Choose from the following: Daksen, S & I, Nud Pob");
+			food = TextIO.getln();
+		} else if(budget >= 11) {
+			System.out.println("Choose from the following: Twelve Hours, Brown Sugar Cafe, Laughing Monk Cafe, Treetop, Kor Tor Mor");
+			food = TextIO.getln();
+		} else {
+			System.out.println("Please put in a valid number.");
+			chooseThai();
+		}
+		return food;
+	}
+
+
+	public static String chooseVietnamese() {
+		System.out.println(" How much are you willing to spend at a restaurant? Please enter in integer form:");
+		int budget = TextIO.getlnInt();
+		String food = "";
+		if(budget>=0 && budget <11){
+			System.out.println("Choose from the following: Pho Pasteur, Ba Le, New Saigon, Le’s Restaurant");
+			food = TextIO.getln();
+		} else if(budget >=11 && budget <=30) {
+			System.out.println("Choose from the following: Anh Hoang, Pho Countryside Boston, Pho Le, Beantown Pho and Grill");
+			food = TextIO.getln();
+		} else {
+			System.out.println("Please put in a valid number");
+			chooseVietnamese();
+		}
+		return food;
+	}
+
+	public static String chooseAmerican() {
+		System.out.println(" How much are you willing to spend at a restaurant? Please enter in integer form:");
+		int budget = TextIO.getlnInt();
+		String food = "";
+		if(budget>=0 && budget <11){
+			System.out.println("Choose from the following: Roxy’s Grilled Cheese, Thornton's Restaurant, Rondo’s Sub Shop");
+			food = TextIO.getln();
+		} else if(budget >=11 && budget <=30) {
+			System.out.println("Choose from the following: The Salty Pig, Legal Seafood Restaurant, Silvertone");
+			food = TextIO.getln();
+		} else if(budget >= 31) {
+			System.out.println("Choose from the following: Neptune’s Oysters, Clink, Yvonne’s, Top of the Hub Restaurant");
+		} else {
+			System.out.println("Please put in a valid number");
+			chooseAmerican();
+		}
+		return food;
+	}
+	public static String chooseIndian() {
+		System.out.println(" How much are you willing to spend at a restaurant? Please enter in integer form:");
+		int budget = TextIO.getlnInt();
+		String food = "";
+		if(budget>=0 && budget <11){
+			System.out.println("Choose from the following: Chutneys, JMP Fine Indian Cuisine, Halal Indian Cuisine");
+			food = TextIO.getln();
+		} else if (budget >=11 && budget <=30){
+			System.out.println("Choose from the following: Punjab Place, Himalayan Bistro, Mumbai Spice");
+		} else if (budget >=31){
+			System.out.println("Choose from the following: Taj Cafe");
+		} else{
+			System.out.println("Please put in a valid number. ");
+			chooseIndian();
+		}
+		return food;
+	}
+
+	public static String chooseItalian(){
+		System.out.println("How much are you willing to spend on a restaurant? Please enter in integer form.");
+		int budget = TextIO.getlnInt();
+		String food = "";
+		if(budget >=0 && budget < 11) {
+			System.out.println("Choose from the following: Bottega di Capri, Alfredo’s, Bottega Fiorentina");
+			food=TextIO.getln();
+		} else if (budget >=11 && budget <=  30){
+			System.out.println("Choose from the following: Giacomo’s Ristorante, Carmelina’s, Pomodoro, Panza");
+			food=TextIO.getln();
+		} else if (budget >=31){
+			System.out.println("Choose from the following: Da Vinci, SRV Boston, Mamma Maria");
+		} else{
+			System.out.println("Please put in a valid number.");
+			chooseItalian();
+		}
+		return food;
+	}
+
+	public static String chooseMediterranean(){
+		System.out.println("How much are you willing to spend on a restaurant? Please enter in integer form.");
+		int budget = TextIO.getlnInt();
+		String food = "";
+		if(budget >=0 && budget < 11) {
+			System.out.println("Choose from the following: Peperi Mediterranean Grill, Noon Mediterranean, Pita ");
+			food=TextIO.getln();
+		} else if (budget >=11 && budget <=  30){
+			System.out.println("Choose from the following: Committee, Metropolis, Mistral ");
+			food=TextIO.getln();
+		} else if (budget >=31){
+			System.out.println("Choose from the following: Porto, Oleana, Trade ");
+		} else{
+			System.out.println("Please put in a valid number.");
+			chooseMediterranean();
+		}
+		return food;
+	}
+
+	public static String chooseIndoorActivity() {
+		System.out.println("How much are you willing to spend on an indoor activity? Please enter in integer form.");
+		int indoorBudget = TextIO.getlnInt();
+		String activity = "";
+		if(indoorBudget >=0 && indoorBudget < 11) {
+			System.out.println("Choose from the following: Isabella Stewart Gardner Museum, Paul Revere House, JFK Museum/Commonwealth Museum,  BPL - Copley" );
+			activity =TextIO.getln();
+		} else if (indoorBudget >11){
+			System.out.println("Choose from the following: New England Aquarium, Museum of Fine Arts, Harvard Museum of Natural History, Museum of Science, Skywalk Observatory, Franklin Park Zoo");
+			activity =TextIO.getln();
+		} else{
+			System.out.println("There are cheaper options! Please put in a valid number.");
+			chooseIndoorActivity();
+		}
+		return activity;
+	}
+
+
+	public static String chooseOutdoorActivity(){
+		System.out.println("How much are you willing to spend on an outdoor activity? Please enter in integer form.");
+		int outdoorBudget = TextIO.getlnInt();
+		String activity = "";
+		if(outdoorBudget >=0 && outdoorBudget < 11) {
+			System.out.println("Choose from the following: Boston commons/garden, Freedom Trail, Boston Harbor" );
+			activity=TextIO.getln();
+		} else if (outdoorBudget >=11 && outdoorBudget<=30){
+			System.out.println("Choose from the following: Quincy Market, Duck Tours" );
+			activity=TextIO.getln();
+
+		}else if (outdoorBudget >=31){
+			System.out.println("Choose from the following: Whale Watching, Kayak on the Charles River " );
+			activity=TextIO.getln();
+		} else{
+			System.out.println("Please put in a valid number.");
+			chooseOutdoorActivity();
+		}
+		return activity;
+	}
+
+	public static String chooseTransportation(){
+		System.out.println("How much are you willing to spend on transportation? Please enter in integer form.");
+		int transportBudget = TextIO.getlnInt();
+		String transportChoice = "";
+		if(transportBudget >= 0 && transportBudget < 11){
+			System.out.println("Choose from the following: Walking, Biking, Bus, Subway");
+			transportChoice = TextIO.getln();
+		} else if (transportBudget >=11 && transportBudget <= 30){
+			System.out.println("Commuter Rail");
+			transportChoice = "Commuter Rail";
+		} else if (transportBudget >=31){
+			System.out.println("Choose from the following: Uber, Lyft, Zipcar");
+			transportChoice = TextIO.getln();
+		} else {
+			System.out.println("Please put in a valid number.");
+			chooseTransportation();
+		}
+		return transportChoice;
+	}
+}
