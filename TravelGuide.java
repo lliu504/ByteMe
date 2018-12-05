@@ -1,6 +1,6 @@
 /*
 The goal of this project is to create a travel guide that caters to college students who want to explore Boston. The following program prompts the users to enter
-their preferences in budget, activities, transportation and food and prints out an itinerary at the end. If the users have no preferences, they can opt in for a random itinerary!
+their preferences with their budget. Then helps them pick their activities, transportation and food and prints out an itinerary at the end. If the users have no preferences, they can opt in for a random itinerary!
 */
 
 public class TravelGuide {
