@@ -1,80 +1,88 @@
 public class TravelGuide {
 	public static void main(String[] args) {
-		System.out.println("Do you want to travel into Boston? Answer 'Yes' or 'No'");
-		String response = TextIO.getlnWord();
-		String activity = "";
-		String food = "";
-		String transportChoice = "";
-		if(response.equals("No")) {
-			System.out.println("thank you, next - Ariana Grande https://www.youtube.com/watch?v=gl1aHhXnN1k");
-			activity = "Stay home";
-		}
-		if(response.equals("Yes")) {
-			System.out.println("Would you like a random itinerary?");
-			String random = TextIO.getlnWord();
-			if(random.equals("Yes")) {
-				System.out.println("What is your standard budget for each activity?");
-				int standard = TextIO.getlnInt();
-				if(standard >=0 && standard < 11) {
-					String[] randomAct = {"Isabella Stewart Gardner Museum","Boston Commons","JFK Museum","Boston Harbor","BPL Copley","Freedom Trail","Paul Revere House"};
-					int random1 = (int)(Math.random()*6);
-					activity = randomAct[random1];
-					String[] randomFood = {"Grass Roots Cafe","Hong Kong Eatery","El Pelón Taquería","Cafe Mami",
-					"Daksen","Pho Pasteur","Roxy’s Grilled Cheese","Thornton's Restaurant","Rondo’s Sub Shop","Ba Le","New Saigon","Le’s Restaurant","S & I","Nud Pob","Pikaichi","Tampopo","Tenoch Mexican","Chutneys","Bottega di Capri"
-					,"Alfredo's","Bottega Fiorentina","JMP Fine Indian Cuisine","Halal Indian Cuisine","Taqueria Jaliso","Clay Pot Cafe","He La Moon","OliToki","Misono Grill","Peperi Mediterranean Grill","Noon Mediterranean","Pita"};
-					int random2 = (int)(Math.random()*randomFood.length);
-					food = randomFood[random2];
-					String[] randomTransport = {"Walking", "Biking", "Bus", "Subway"};
-					int random3 = (int)(Math.random()*randomTransport.length);
-					transportChoice = randomTransport[random3];
-				}
-				if(standard >=11 && standard<=30) {
-					String[] randomAct = {"New England Aquarium","Museum of Fine Arts","Harvard Museum of Natural History","Museum of Science","Skywalk Observatory","Franklin Park Zoo","Quincy Market","Duck Tours"};
-					int random1 = (int)(Math.random()*randomAct.length);
-					activity = randomAct[random1];
-					String[] randomFood = {"Giacomo’s Ristorante","Carmelina’s","Pomodoro","Panza",
-					"Seoul Soulongtang","SOJUba","Bonchon","The Salty Pig","Legal Seafood Restaurant","Silvertone","Committee","Metropolis","Mistral","Lolita Cocina & Tequila Bar","Locao Taqueria and Oyster Bar","El Centro","Q Restaurant","Gourmet Dumpling House","New Golden Gate"
-					,"Ittoku","Genki Ya","Gyu Kaku","Twelve Hours","Brown Sugar Cafe","Laughing Monk Cafe","Punjab Place","Himalayan Bistro","Mumbai Spice","Anh Hong","Pho Basil","Pho Le"};
-					int random2 = (int)(Math.random()*randomFood.length);
-					food = randomFood[random2];
-					transportChoice = "Commuter Rail";
-				}
-				if(standard >=31) {
-					String[] randomAct = {"Whale Watching","Prudential Center","Newbury Street","Charles River Kayak"};
-					int random1 = (int)(Math.random()*randomAct.length);
-					activity = randomAct[random1];
-					String[] randomFood = {"Da Vinci","SRV Boston","Mamma Maria","Neptune’s Oysters",
-					"Clink","Yvonne’s","Porto","Oleana","Trade","Temazcal Tequila Cantina","Toro","PABU","Douzo","Fugakyu","Taj Cafe","Tiger Mama"};
-					int random2 = (int)(Math.random()*randomFood.length);
-					food = randomFood[random2];
-					String[] randomTransport = {"Uber/Lyft", "Zipcar"};
-					int random3 = (int)(Math.random()*randomTransport.length);
-					transportChoice = randomTransport[random3];
-				}
+		boolean keepGoing = true;
+		while(keepGoing) {
+			System.out.println("Do you want to travel into Boston? Answer 'Yes' or 'No'");
+			String response = TextIO.getlnWord();
+			String activity = "";
+			String food = "";
+			String transportChoice = "";
+			if(response.equals("No")) {
+				System.out.println("thank you, next - Ariana Grande https://www.youtube.com/watch?v=gl1aHhXnN1k");
+				activity = "Stay home";
+				keepGoing = false;
 			}
-			if(random.equals("No")) {
-				System.out.println("Do you want indoor or outdoor activities? Answer 'indoor', 'outdoor', 'neither'.");
-				String activities = TextIO.getlnWord();
-				if(activities.equals("indoor")) {
-					activity = chooseIndoorActivity();
+			if(response.equals("Yes")) {
+				System.out.println("Would you like a random itinerary?");
+				String random = TextIO.getlnWord();
+				if(random.equals("Yes")) {
+					System.out.println("What is your standard budget for each activity?");
+					int standard = TextIO.getlnInt();
+					if(standard >=0 && standard < 11) {
+						String[] randomAct = {"Isabella Stewart Gardner Museum","Boston Commons","JFK Museum","Boston Harbor","BPL Copley","Freedom Trail","Paul Revere House"};
+						int random1 = (int)(Math.random()*6);
+						activity = randomAct[random1];
+						String[] randomFood = {"Grass Roots Cafe","Hong Kong Eatery","El Pelón Taquería","Cafe Mami",
+						"Daksen","Pho Pasteur","Roxy’s Grilled Cheese","Thornton's Restaurant","Rondo’s Sub Shop","Ba Le","New Saigon","Le’s Restaurant","S & I","Nud Pob","Pikaichi","Tampopo","Tenoch Mexican","Chutneys","Bottega di Capri"
+						,"Alfredo's","Bottega Fiorentina","JMP Fine Indian Cuisine","Halal Indian Cuisine","Taqueria Jaliso","Clay Pot Cafe","He La Moon","OliToki","Misono Grill","Peperi Mediterranean Grill","Noon Mediterranean","Pita"};
+						int random2 = (int)(Math.random()*randomFood.length);
+						food = randomFood[random2];
+						String[] randomTransport = {"Walking", "Biking", "Bus", "Subway"};
+						int random3 = (int)(Math.random()*randomTransport.length);
+						transportChoice = randomTransport[random3];
+					}
+					if(standard >=11 && standard<=30) {
+						String[] randomAct = {"New England Aquarium","Museum of Fine Arts","Harvard Museum of Natural History","Museum of Science","Skywalk Observatory","Franklin Park Zoo","Quincy Market","Duck Tours"};
+						int random1 = (int)(Math.random()*randomAct.length);
+						activity = randomAct[random1];
+						String[] randomFood = {"Giacomo’s Ristorante","Carmelina’s","Pomodoro","Panza",
+						"Seoul Soulongtang","SOJUba","Bonchon","The Salty Pig","Legal Seafood Restaurant","Silvertone","Committee","Metropolis","Mistral","Lolita Cocina & Tequila Bar","Locao Taqueria and Oyster Bar","El Centro","Q Restaurant","Gourmet Dumpling House","New Golden Gate"
+						,"Ittoku","Genki Ya","Gyu Kaku","Twelve Hours","Brown Sugar Cafe","Laughing Monk Cafe","Punjab Place","Himalayan Bistro","Mumbai Spice","Anh Hong","Pho Basil","Pho Le"};
+						int random2 = (int)(Math.random()*randomFood.length);
+						food = randomFood[random2];
+						transportChoice = "Commuter Rail";
+					}
+					if(standard >=31) {
+						String[] randomAct = {"Whale Watching","Prudential Center","Newbury Street","Charles River Kayak"};
+						int random1 = (int)(Math.random()*randomAct.length);
+						activity = randomAct[random1];
+						String[] randomFood = {"Da Vinci","SRV Boston","Mamma Maria","Neptune’s Oysters",
+						"Clink","Yvonne’s","Porto","Oleana","Trade","Temazcal Tequila Cantina","Toro","PABU","Douzo","Fugakyu","Taj Cafe","Tiger Mama"};
+						int random2 = (int)(Math.random()*randomFood.length);
+						food = randomFood[random2];
+						String[] randomTransport = {"Uber/Lyft", "Zipcar"};
+						int random3 = (int)(Math.random()*randomTransport.length);
+						transportChoice = randomTransport[random3];
+					}
 				}
-				if (activities.equals("outdoor")){
-					activity = chooseOutdoorActivity();
-				}
-				if(activities.equals("neither")) {
-					System.out.println("Are you up for a food adventure? Answer 'Yes' or 'No'. ");
+				if(random.equals("No")) {
+					System.out.println("Do you want indoor or outdoor activities? Answer 'indoor', 'outdoor', 'neither'.");
+					String activities = TextIO.getlnWord();
+					if(activities.equals("indoor")) {
+						activity = chooseIndoorActivity();
+					}
+					if (activities.equals("outdoor")){
+						activity = chooseOutdoorActivity();
+					}
+					if(activities.equals("neither")) {
+						activity = "Have fun! :)";
+					}
+					System.out.println("Are you up for a food adventure? Answer 'Yes' or 'No'.");
 					String adventure = TextIO.getlnWord();
 					if(adventure.equals("Yes")) {
 						food = chooseCuisine();
 						transportChoice = chooseTransportation();
 					} else if (adventure.equals("No")) {
-					System.out.println("thank you, next - Ariana Grande https://www.youtube.com/watch?v=gl1aHhXnN1k");
-				}
+						System.out.println("thank you, next - Ariana Grande https://www.youtube.com/watch?v=gl1aHhXnN1k");
+						food = "&";
+						transportChoice = chooseTransportation();
+					}
+			}
+			System.out.println("Here is your itinerary:");
+			System.out.printf("%s%n%s%n%s%n",activity,food,transportChoice);
+			keepGoing = true;
 			}
 		}
-		System.out.println("Here is your itinerary:");
-		System.out.printf("%s%n%s%n%s%n",activity,food,transportChoice);
-	}
 }
 
 		public static String chooseCuisine() {
