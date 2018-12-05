@@ -7,15 +7,15 @@ public class TravelGuide {
 			String activity = "";
 			String food = "";
 			String transportChoice = "";
-			if(response.equals("No")) {
+			if(response.equalsIgnoreCase("No")) {
 				System.out.println("thank you, next - Ariana Grande https://www.youtube.com/watch?v=gl1aHhXnN1k");
 				activity = "Stay home";
 				keepGoing = false;
 			}
-			if(response.equals("Yes")) {
+			if(response.equalsIgnoreCase("Yes")) {
 				System.out.println("Would you like a random itinerary?");
 				String random = TextIO.getlnWord();
-				if(random.equals("Yes")) {
+				if(random.equalsIgnoreCase("Yes")) {
 					System.out.println("What is your standard budget for each activity?");
 					int standard = TextIO.getlnInt();
 					if(standard >=0 && standard < 11) {
@@ -55,24 +55,24 @@ public class TravelGuide {
 						transportChoice = randomTransport[random3];
 					}
 				}
-				if(random.equals("No")) {
+				if(random.equalsIgnoreCase("No")) {
 					System.out.println("Do you want indoor or outdoor activities? Answer 'indoor', 'outdoor', 'neither'.");
 					String activities = TextIO.getlnWord();
-					if(activities.equals("indoor")) {
+					if(activities.equalsIgnoreCase("indoor")) {
 						activity = chooseIndoorActivity();
 					}
-					if (activities.equals("outdoor")){
+					if (activities.equalsIgnoreCase("outdoor")){
 						activity = chooseOutdoorActivity();
 					}
-					if(activities.equals("neither")) {
+					if(activities.equalsIgnoreCase("neither")) {
 						activity = "Have fun! :)";
 					}
 					System.out.println("Are you up for a food adventure? Answer 'Yes' or 'No'.");
 					String adventure = TextIO.getlnWord();
-					if(adventure.equals("Yes")) {
+					if(adventure.equalsIgnoreCase("Yes")) {
 						food = chooseCuisine();
 						transportChoice = chooseTransportation();
-					} else if (adventure.equals("No")) {
+					} else if (adventure.equalsIgnoreCase("No")) {
 						System.out.println("thank you, next - Ariana Grande https://www.youtube.com/watch?v=gl1aHhXnN1k");
 						food = "&";
 						transportChoice = chooseTransportation();
@@ -89,25 +89,25 @@ public class TravelGuide {
 			System.out.println("Here is a list of cuisines: Korean, Japanese, Chinese, Thai, Vietnamese, Indian, Italian, American, Mediterranean, Mexican. Which one do you crave?");
 			String cuisine = TextIO.getlnWord();
 			String food = "";
-			if(cuisine.equals("Korean")) {
+			if(cuisine.equalsIgnoreCase("Korean")) {
 				food = chooseKorean();
-			} else if(cuisine.equals("Japanese")) {
+			} else if(cuisine.equalsIgnoreCase("Japanese")) {
 				food = chooseJapanese();
-			} else if(cuisine.equals("Chinese")) {
+			} else if(cuisine.equalsIgnoreCase("Chinese")) {
 				food = chooseChinese();
-			} else if(cuisine.equals("Thai")) {
+			} else if(cuisine.equalsIgnoreCase("Thai")) {
 				food = chooseThai();
-			} else if(cuisine.equals("Vietnamese")) {
+			} else if(cuisine.equalsIgnoreCase("Vietnamese")) {
 				food = chooseVietnamese();
-			} else if(cuisine.equals("Indian")) {
+			} else if(cuisine.equalsIgnoreCase("Indian")) {
 				food = chooseIndian();
-			} else if (cuisine.equals("Italian")) {
+			} else if (cuisine.equalsIgnoreCase("Italian")) {
 				food = chooseItalian();
-			} else if(cuisine.equals("American")) {
+			} else if(cuisine.equalsIgnoreCase("American")) {
 				food = chooseAmerican();
-			} else if(cuisine.equals("Mediterranean")) {
+			} else if(cuisine.equalsIgnoreCase("Mediterranean")) {
 				food = chooseMediterranean();
-			} else if(cuisine.equals("Mexican")) {
+			} else if(cuisine.equalsIgnoreCase("Mexican")) {
 				food = chooseMexican();
 			} else {
 				System.out.println("thank you, next - Ariana Grande https://www.youtube.com/watch?v=gl1aHhXnN1k");
